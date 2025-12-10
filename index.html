@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toplu Video Transkripsiyon Aracı</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ Toplu Video Transkripsiyon Aracı</h1>
+        
+        <div class="api-settings">
+            <h2>API Ayarları</h2>
+            <input type="password" id="apiKeyInput" placeholder="Downsub API Anahtarınızı Girin">
+            <button id="saveApiButton">Anahtarı Kaydet</button>
+            <div id="usageStatus">
+                Kalan Kullanım: <span id="remainingCredits">Yükleniyor...</span> | 
+                Toplam Kullanım: <span id="totalCredits">Yükleniyor...</span>
+            </div>
+        </div>
+        
+        <hr>
+
+        <h2>🔗 Linkleri Girin</h2>
+        <textarea id="urlInput" rows="10" placeholder="Her satıra bir link:&#10;https://www.youtube.com/watch?v=link1&#10;https://www.youtube.com/watch?v=link2"></textarea>
+        
+        <h2>💾 Çıktı Formatı Seçimi</h2>
+        <div class="format-options">
+            <input type="radio" id="formatSrt" name="format" value="srt" checked>
+            <label for="formatSrt">SRT (.srt)</label>
+            
+            <input type="radio" id="formatTxt" name="format" value="txt">
+            <label for="formatTxt">Düz Metin (.txt)</label>
+            
+            <input type="radio" id="formatDocx" name="format" value="docx">
+            <label for="formatDocx">Word Belgesi (.docx)</label>
+        </div>
+
+        <button id="downloadButton">Seçilen Formatlarda İndir (ZIP)</button>
+        
+        <div id="statusMessage" class="hidden">İşleniyor... Lütfen bekleyin.</div>
+        <a id="downloadLink" class="hidden" download="transkripsiyon.zip">İndirme Başarılı! Buradan İndirin.</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
